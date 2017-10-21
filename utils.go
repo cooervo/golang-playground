@@ -13,10 +13,10 @@ func print(a ...interface{}) {
 }
 
 type Config struct {
-	Address string
-	ReadTimeout int64
+	Address      string
+	ReadTimeout  int64
 	WriteTimeout int64
-	Static string
+	Static       string
 }
 
 var config Config
@@ -36,9 +36,5 @@ func loadConfig() {
 	if err != nil {
 		log.Fatalf("Cannot decode configuration from file", err)
 	}
-	print("err", err)
-	print("decoder", decoder)
-	print("config", config)
-	print("nil", nil)
 }
 

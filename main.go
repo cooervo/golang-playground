@@ -6,11 +6,13 @@ import (
 )
 
 func main() {
+	print("starting server")
+
 	mux := http.NewServeMux()
 	files := http.FileServer(http.Dir(config.Static))
 	mux.Handle("/static", http.StripPrefix("/static/", files))
 
-	//TODO mux.HandleFunc("/", index)
+	mux.HandleFunc("/", index)
 
 	server := &http.Server{
 		Addr:         config.Address,
@@ -20,6 +22,6 @@ func main() {
 	}
 
 	server.ListenAndServe()
-	print("Server running at ", "http://"+config.Address)
+	print("Server running at http://" + config.Address)
 
 }
