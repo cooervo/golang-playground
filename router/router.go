@@ -6,7 +6,7 @@ import (
 	"html/template"
 )
 
-func index(w http.ResponseWriter, r *http.Request) {
+func Index(w http.ResponseWriter, r *http.Request) {
 	generateHtml(w, nil, "layout", "nav", "index")
 }
 

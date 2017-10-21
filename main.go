@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"time"
+	"golang-playground/router"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 	files := http.FileServer(http.Dir(config.Static))
 	mux.Handle("/static", http.StripPrefix("/static/", files))
 
-	mux.HandleFunc("/", index)
+	mux.HandleFunc("/", router.Index)
 
 	server := &http.Server{
 		Addr:         config.Address,
