@@ -8,7 +8,7 @@ import (
 )
 
 // Prints to stdout
-func print(a ...interface{}) {
+func p(a ...interface{}) {
 	fmt.Println(a)
 }
 
@@ -16,7 +16,6 @@ type Config struct {
 	Address      string
 	ReadTimeout  int64
 	WriteTimeout int64
-	Static       string
 }
 
 var config Config

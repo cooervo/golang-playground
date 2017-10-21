@@ -1,25 +1,21 @@
 {{ define "layout" }}
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=9">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ChitChat</title>
-  </head>
-  <body>
-    {{ template "nav" . }}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="static/css/layout.css" rel="stylesheet">
 
-    <div class="container">
-      
-      {{ template "content" . }}
-      
-    </div> <!-- /container -->
-    
-    <script src="/static/js/jquery-2.1.1.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-  </body>
+  <title>MY APP</title>
+
+</head>
+<body>
+{{ template "nav" . }}
+<main>
+  <p>EXAMPLE</p>
+  {{ template "content" . }}
+</main>
+</body>
 </html>
-
 {{ end }}

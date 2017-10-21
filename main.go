@@ -7,13 +7,16 @@ import (
 )
 
 func main() {
-	print("starting server")
+	println("starting server")
 
 	mux := http.NewServeMux()
-	files := http.FileServer(http.Dir(config.Static))
-	mux.Handle("/static", http.StripPrefix("/static/", files))
+
+	// Serve public files
+	fs := http.FileServer(http.Dir("public"))
+	mux.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	mux.HandleFunc("/", router.Index)
+	mux.HandleFunc("/documentary", router.Documentary)
 
 	server := &http.Server{
 		Addr:         config.Address,
@@ -23,6 +26,6 @@ func main() {
 	}
 
 	server.ListenAndServe()
-	print("Server running at http://" + config.Address)
+	println("Server running at http://" + config.Address)
 
 }
