@@ -1,3 +1,6 @@
-*, p, div {
-    color: blue;
+*,
+p,
+div {
+  color: blue;
+  background: pink;
 }
