@@ -1,1 +1,0 @@
-gin --all --immediate --path . --build .
