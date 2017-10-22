@@ -2,3 +2,7 @@
 
 *.exe
 *.csv
+
+# Client side ignores
+client/node_modules/
+client/package-lock.json
