@@ -11,9 +11,10 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	// Serve public files
+	// All requests that start with /static/* get handled by Handler created by StripPrefix
 	fs := http.FileServer(http.Dir("public"))
-	mux.Handle("/static/", http.StripPrefix("/static/", fs))
+	handler := http.StripPrefix("/static/", fs)
+	mux.Handle("/static/", handler)
 
 	mux.HandleFunc("/", router.Index)
 	mux.HandleFunc("/documentary", router.Documentary)
@@ -27,5 +28,4 @@ func main() {
 
 	server.ListenAndServe()
 	println("Server running at http://" + config.Address)
-
 }

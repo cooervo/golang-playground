@@ -1,1 +1,1 @@
-gin --all run main
+gin --all --immediate --path . --build .
