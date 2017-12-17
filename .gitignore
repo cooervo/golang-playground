@@ -3,6 +3,10 @@
 *.exe
 *.csv
 
+# ignore binaries
+gin-bin
+quoteapp
+
 # Client side ignores
 client/node_modules/
 client/package-lock.json

@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 	"time"
-	"golang-playground/router"
+	"quoteapp/router"
 )
 
 func main() {

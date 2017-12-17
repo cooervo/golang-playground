@@ -5,4 +5,4 @@ var getMessage = function getMessage() {
 };
 
 var x = "foo";
-alert(x + x);
+alert(x + "x");
